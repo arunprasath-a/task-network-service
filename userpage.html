@@ -1,0 +1,102 @@
+<!DOCTYPEhtml>
+<html>
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<style>
+.head{
+text-align:center;
+
+box-sizing: border-box;
+
+}
+
+.inp1{
+float:top;
+margin: 0 0 0 0;
+}
+
+.content{
+display:inline;
+}
+
+.main{
+display:inline;
+}
+
+.canvasdiv1{
+width : 50%;
+}
+
+.container-fluid{
+box-sizing: border-box;
+}
+
+body{
+	max-width: 100%;
+  margin: auto;
+  background: white;
+  padding: 10px;
+}
+</style>
+</head>
+<body>
+
+<div class="head">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Supermax User</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a style="border:1px black;" onclick="out()">Logout</a></li>
+	  </ul>
+  </div>
+</nav>
+</div>
+
+
+<div class="container-fluid">
+<div class="row">
+
+<div class="col-sm-6" style=" margin-top:25px;" >
+<div style="padding:20x;">
+	<h4>select your area to see our speed </h4>
+<img src ="https://www.digitalofficepro.com/ppt/018M35/india-3d-map-powerpoint-map-slide-l.jpg" width="500px" alt="India"usemap="#indiamap">
+<map name="indiamap">
+ <area shape="rect" id="rect1" coords="36,114,216,231" value="north" onclick="north()" alt="north">
+  <area shape="rect" id="rect2" coords="36,220,240,375" value="south" onclick="south()" alt="south">
+</map>
+<iframe id="mapframe" style="display:none"></iframe></div></div> 	
+
+<div class="col-sm-6" >
+<h4 style="margin-top: 40px;"> Month wise usage </h4>	
+<canvas id="myChart" style="margin-top: 12px;"></canvas>
+</div>
+
+<script src="userpage.js"></script>
+<script src="adminpage.js"></script>
+
+<script>
+//PIE CHART
+var ctxP = document.getElementById("myChart").getContext('2d');
+var myPieChart = new Chart(ctxP, {
+type: 'pie',
+data: {
+  labels: ["Jan", "Feb", "Mar", "Apr","May", "Jun", "Jul","Aug","Sep", "Oct", "Nov","Dec"],
+  datasets: [{
+data: [1, 0.5, 1.2, 0.8, 0.3, 1.5, 1,0.5,0.2,1,1,1],
+backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360","#1a75ff", "#4D5360","#F7464A", "#46BFBD", "#FDB45C", "#949FB1","#46BFBD"],
+hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774","#4d94ff","#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774","#4d94ff"]
+  }]
+},
+options: {
+  responsive: true,
+ }
+  });
+
+</script>
+
+
+</body>
+</html>

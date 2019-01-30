@@ -1,0 +1,67 @@
+<!DOCTYPEhtml>
+<html>
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+<script type="text/javascript" src="adminpage.js"></script> 
+
+<style>
+.head{
+text-align:center;
+border:1px solid black;
+box-sizing: border-box;
+
+}
+</style>
+</head>
+<body>
+
+<div class="head">
+<h2> North </h2>
+</div>
+
+<canvas id="myChart" width="400" height="400"></canvas>
+
+
+<script>
+
+var arun= 1;
+var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["Airtel", "Vodafone", "Tech fiber", "Fiber net", "Aircel", "Docomo"],
+        datasets: [{label: 'Mbps', data: [arun, 12, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+s
+</script>
+
+</body>
+</html>
